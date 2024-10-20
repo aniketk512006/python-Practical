@@ -1,0 +1,321 @@
+Assignment 1
+Write some simple programs in Java such as:
+i) To find factorial of number.
+
+import java.util.*; class Fact
+{
+public static void main(String[] args)
+{
+int fact=1;
+Scanner sc= new Scanner (System.in); System.out.print ("Enter the number: "); int n=sc.nextInt();
+for(int i=1;i<=n;i++)
+{
+fact=fact*i;
+}
+System.out.print ("Factorial: "+fact);
+}
+}
+
+ii) To display first 50 prime numbers.
+
+public class Prime {
+
+public static void main(String[] args) { int num = 50, count;
+for (int i = 1; i <= num; i++) { count = 0;
+for (int j = 2; j <= i / 2; j++) { if (i % j == 0) {
+count++; break;
+}
+}
+
+if (count == 0) { System.out.println (i);
+}
+}
+}
+}
+
+iii) To find sum and average of N numbers
+
+import java.util.Scanner;
+public class SumAndAverage {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt(), sum = 0;
+        for (int i = 0; i < N; sum += sc.nextInt(), i++);
+        System.out.println("Sum: " + sum + ", Avg: " + (double)sum / N);
+    }
+}
+
+Assignment 2 
+Write a program in Java to implement a Calculator with simple arithmetic operations
+
+import java.util.Scanner;
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);        
+        System.out.print("Enter first number: ");
+        double num1 = sc.nextDouble();        
+        System.out.print("Enter an operator (+, -, *, /): ");
+        char operator = sc.next().charAt(0);        
+        System.out.print("Enter second number: ");
+        double num2 = sc.nextDouble();        
+        double result;        
+        switch (operator) {
+            case '+': result = num1 + num2; break;
+            case '-': result = num1 - num2; break;
+            case '*': result = num1 * num2; break;
+            case '/': 
+                if (num2 != 0) result = num1 / num2; 
+                else {
+                    System.out.println("Error! Division by zero.");
+                    return;
+                }
+                break;
+            default: 
+                System.out.println("Invalid operator!"); 
+                return;
+        }        
+        System.out.println("Result: " + result);
+    }
+}
+
+Assignment 3
+Write a program in Java with the class Rectangle with the data field’s width, length, area and colour the length, width and area are of double type and the colour is of string type. The methods are get_length (), get_width (), get_colour () and find_area (). Create two objects of Rectangle and compare their area and colour. If the area and colour both are the same for the objects then display “Matching Rectangles”, otherwise display “Non-matching Rectangle”
+
+import java.util.Scanner;
+class Rectangle {
+    double length;
+    double width;
+    String color;
+    double area;
+    void set_length(double x) {
+        length = x;
+    }
+    void set_width(double y) {
+        width = y;
+    }
+    void set_color(String s) {
+        color = s;
+    }
+    double rect_area() {
+        area = length * width;
+        return area;
+    }
+    String get_color() {
+        return color;
+    }
+}
+public class Rect {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Rectangle r1 = new Rectangle();
+        Rectangle r2 = new Rectangle();
+        System.out.print("Enter the length of rectangle1: ");
+        double x1 = sc.nextDouble();
+        System.out.print("Enter the width of rectangle1: ");
+        double y1 = sc.nextDouble();
+        System.out.print("Enter the color of rectangle1: ");
+        String s1 = sc.next();
+        System.out.print("Enter the length of rectangle2: ");
+        double x2 = sc.nextDouble();
+        System.out.print("Enter the width of rectangle2: ");
+        double y2 = sc.nextDouble();
+        System.out.print("Enter the color of rectangle2: ");
+        String s2 = sc.next();
+        r1.set_length(x1);
+        r1.set_width(y1);
+        r1.set_color(s1);
+        r2.set_length(x2);
+        r2.set_width(y2);
+        r2.set_color(s2);
+        double rect1_area = r1.rect_area();
+        double rect2_area = r2.rect_area();
+        System.out.println("Area of Rectangle1: " + rect1_area);
+        System.out.println("Area of Rectangle2: " + rect2_area);
+        if (rect1_area == rect2_area && r1.get_color().equals(r2.get_color())) {
+            System.out.println("Matching Rectangles");
+        } else {
+            System.out.println("Non-Matching Rectangles");
+        }
+    }
+}
+
+Assignment 4
+Write Programs in Java to sort 
+i) List of integer’s
+
+public class SortAsc {
+    public static void main(String[] args) {
+        int[] arr = new int[] {5, 2, 8, 7, 1};
+        int temp;
+        System.out.println("Elements of original array: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[i] > arr[j]) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        System.out.println("\nElements of array sorted in ascending order: ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+
+ii) List of names. 
+
+import java.util.*;
+class NameSort {
+public static void main(String[] args)
+{
+int n = 4;
+String names[]
+= { "Rahul", "Ajay", "Gourav", "Riya" };
+Arrays.sort(names);
+System.out.println(
+"The names in alphabetical order are: ");
+for (int i = 0; i < n; i++) {
+System.out.println(names[i]);
+}
+}
+}
+
+Experiment 5
+Write a Program in Java to add two matrices.
+
+public class AddMatrices {
+public static void main(String[] args) {
+int rows = 2, columns = 3;
+int[ ][ ] firstMatrix = { {2, 3, 4}, {5, 2, 3} };
+int[ ][ ] secondMatrix = { {-4, 5, 3}, {5, 6, 3} };
+// Adding Two matrices
+int[][] sum = new int[rows][columns];
+for(int i = 0; i < rows; i++) {
+for (int j = 0; j < columns; j++) {
+sum[i][j] = firstMatrix[i][j] + secondMatrix[i][j];
+}
+}
+// Displaying the result
+System.out.println("Sum of two matrices is: ");
+for(int[] row : sum) {
+for (int column : row) {
+System.out.print(column + " ");
+}
+System.out.println();
+}
+}
+}
+
+Experiment 6
+Write a program in Java to create a player class. Inherit the classes Cricket_player,Football_player and Hockey_player from player class.
+
+class Player
+{
+public void Display()
+{
+System.out.println ("This is Player class");
+}
+}
+class Cricket_Player extends Player
+{
+public void Display()
+{
+System.out.println ("My favorite Cricket Player is Sachin Tendulkar");
+}
+}
+class Football_Player extends Player
+{
+public void Display ()
+{
+System.out.println("My favorite Football Player is Ronaldo,Cristiano");
+}
+}
+class Hockey_Player extends Player
+{
+public void Display()
+{
+System.out.println("My favorite Hockey Player is Dhyan Chand");
+}
+}
+class Main
+{
+public static void main(String[] args) {
+Cricket_Player d1= new Cricket_Player();
+d1.Display();
+Football_Player d2= new Football_Player();
+d2.Display();
+Hockey_Player d3= new Hockey_Player();
+d3.Display();
+}
+}
+
+Experiment 7
+ Write a Java program which imports user defined package and uses members of the classes contained in the package.
+
+src> mypackage > calculator
+
+package mypackage;
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    public int subtract(int a, int b) {
+        return a - b;
+    }
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+    public double divide(int a, int b) {
+        if (b != 0) {
+            return (double) a / b;
+        } else {
+            System.out.println("Error! Division by zero.");
+            return 0; // Return 0 or throw an exception as needed
+        }
+    }
+}
+
+
+javac mypackage/Calculator.java
+
+
+import mypackage.Calculator; // Import the user-defined package
+public class Main {
+    public static void main(String[] args) {        
+        Calculator calculator = new Calculator();
+        int num1 = 10;
+        int num2 = 5;
+        System.out.println("Addition: " + calculator.add(num1, num2));
+        System.out.println("Subtraction: " + calculator.subtract(num1, num2));
+        System.out.println("Multiplication: " + calculator.multiply(num1, num2));
+        System.out.println("Division: " + calculator.divide(num1, num2));
+    }
+}
+
+Experiment 8 
+Write a java program which use try and catch for exception handling
+
+public class ArithmeticExceptionExample {
+    public static void main(String[] args) {
+        int numerator = 10;
+        int denominator = 0;
+        int result = 0;
+        try {
+            // This will cause an ArithmeticException (division by zero)
+            result = numerator / denominator;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException caught: Division by zero is not allowed.");
+        } finally {
+            System.out.println("This is the finally block. It will always be executed.");
+        }
+        System.out.println("Program continues after exception handling.");
+    }
+}
+
+
