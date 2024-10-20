@@ -1,0 +1,616 @@
+Assignment No – 1
+Aim: Write a program by using basic concepts like input, output, variable,
+keywords, and identifiers.
+
+
+Q.1 Write python program to input user name and greet the user?
+Python Code:
+name = input("Hello, What's your name?")
+print("Hello " + name+ " it's nice to meet you"+ "!")
+Q.2 Print a box like the one below.
+Python Code:
+print ('*' * 19)
+print ('*' * 19)
+print ('*' * 19)
+print ('*' * 19)
+Q.3 Ask the user to enter a number x. Use the sep optional argument to print out x,
+2x, 3x, 4x, and 5x, each separated by three dashes, like below.
+Python Code:
+a=int(input())
+print(a,"---",a*2,"---",a*3,"---",a*4,"---",a*5,sep='')
+Q. 4 Write a program that reads marks of three quizzes and outputs the total out of 100.
+Python Code:
+a = int(input("Enter the marks of first subject: "))
+b = int(input("Enter the marks of second subject: "))
+c = int(input("Enter the marks of third subject: "))
+total = a+b+c
+avg = total/3
+print("Total marks: ",total)
+print("Average marks: ",avg)
+ Q.5 What will be the output of the following Python program?
+Python Code:
+print("Hello", "World!", end='####')
+print("Bye", "World!", sep='$$')
+print("With sep", "and end", sep=' ', end='.\n')
+
+Assignment No: - 2
+Aim: Write a program to demonstrate the of arithmetic operators.
+
+Q.1 Write a program that asks the user for a weight in kilograms and converts it to
+pounds. There are 2.2 pounds in a kilogram.
+Python Code:
+kg = float(input("What is you're weight in kilograms? "))
+lbs = kg * 2.20462
+print (lbs)
+Q. 2 Write a program that asks the user to enter three numbers (use three separate
+input statements). Create variables called total and average that hold the sum and
+average of the three numbers and print out the values of total and average.
+Python Code:
+a = int (input(" Please Enter the First Number: "))
+b = int (input(" Please Enter the second number: "))
+c = int (input(" Please Enter the second number: "))
+total=a+b+c
+average=total/3
+print("The average of three numbers is ", average)
+Q. 3 Write a program that computes and prints the result of 512−282/47∙48+5 .It is roughly 0.1017.
+Python Code:
+a= ((512-282)/((47*48)+5))
+a= round(a,4)
+print(a)
+Q. 4 What will be the output of following Python program?
+Python Code:
+integer_value = 5
+float_value = 3.14
+complex_value = 2 + 3j
+result_float = integer_value * float_value
+result_complex = float_value + complex_value
+print(result_float)
+print(result_complex )
+Q. 5 Write a program which asks for the number of students on a course and the
+desired group size. The program will then print out the number of groups formed
+from the students on the course. If the division is not even, one of the groups
+may have fewer members than specified.
+Python Code:
+students = int(input("How many students on the course?"))
+group = int(input("Desired group size?"))
+import math
+print(math.ceil(students/group))
+
+
+Assignment No – 3
+Aim: Write a program to demonstrate working of control structures.
+
+
+Q.1 Write a program that prints your name 5 times.
+Python Code:
+for i in range(5):
+ print("Hello world")
+Q. 2 Write a program that asks the user to enter a length in centimeters. If the user
+enters a negative length, the program should tell the user that the entry is invalid.
+Otherwise, the program should convert the length to inches and print out the result.
+There are 2.54 centimeters in an inch.
+Python Code:
+y=eval(input('enter a length in centimeters'))
+if (y<0):
+ print('Invalid Entry')
+else:
+ print('Inches = ',y/2.54)
+Q. 3 Ask the user to enter a temperature in Celsius. The program should print a
+message based on the temperature:
+• If the temperature is less than -273.15, print that the temperature is invalid because
+it is below absolute zero.
+• If it is exactly -273.15, print that the temperature is absolute 0.
+• If the temperature is between -273.15 and 0, print that the temperature is below
+freezing.
+• If it is 0, print that the temperature is at the freezing point.
+• If it is between 0 and 100, print that the temperature is in the normal range.
+• If it is 100, print that the temperature is at the boiling point.
+• If it is above 100, print that the temperature is above the boiling point.
+Python Code:
+t=eval(input('Enter the Temperature in Celsius'))
+if t<-273.15:
+ print('Invalid Temperature')
+elif t==-273.15:
+ print('The temperature is absolute 0')
+elif t>-273.15 and t<0:
+ print('The temperature is below freezing')
+elif t==0:
+ print('The temperature is at the freezing point.')
+elif t>0 and t<100:
+ print('The temperature is in the normal range.')
+elif t==100:
+ print('The temperature is at the boiling point.')
+elif t>100:
+ print('The temperature is above the boiling point.')
+Q. 4 Generate a random number between 1 and 10. Ask the user to guess the number
+and print a message based on whether they get it right or not.
+Python Code:
+from random import randint
+x = randint(1,10)
+y=eval(input('Guess the number '))
+if y==x:
+ print('Your guess is correct!')
+else:
+ print('Your guess is wrong! The number is: ',x)
+Q. 5 Write a program to find the second maximum in a list.
+Python Code:
+list1 = [10, 20, 4, 45, 99]
+mx = max(list1[0], list1[1])
+secondmax = min(list1[0], list1[1])
+n = len(list1)
+for i in range(2,n):
+ if list1[i] > mx:
+ secondmax = mx
+ mx = list1[i]
+ elif list1[i] > secondmax and mx != list1[i]:
+ secondmax = list1[i]
+ elif mx == secondmax and secondmax != list1[i]:
+ secondmax = list1[i]
+print (list1)
+print("Second highest number is : ",str(secondmax))
+
+Assignment No.: - 4
+Aim: Write a program to demonstrate working of different types of functions.
+
+Q.1 Write a program that prints Hello word using function.
+Python Code:
+def print_hello():
+ print('Hello!')
+print_hello()
+Q.2 Print a box like the one below using function.
+Python Code:
+def draw_square():
+ print('*' * 19)
+ print('*', ' '*15, '*')
+ print('*', ' '*15, '*')
+ print('*' * 19)
+Q.3 Print a box like the one below using function.
+Python Code:
+def print_hello(n):
+ print('Hello ' * n)
+ print()
+print_hello(3)
+print_hello(5)
+times = 2
+print_hello(times)
+Q. 4 Write Python program to converts temperatures from Celsius to Fahrenheit
+using function and return the converted value to the calling function.
+Python Code:
+def convert(t):
+return t*9/5+32
+print(convert(20))
+Q. 5 Write a function called first_diff that is given two strings and returns the first
+location in which the strings differ. If the strings are identical, it should return -1.
+Python Code:
+def first_difference(str1, str2):
+ if str1 == str2:
+ return -1
+ else:
+ for str1, str2 in zip(str1, str2):
+ if str1 != str2:
+ return str1
+string1 = input("Enter first string:")
+string2 = input("Enter second string:")
+print(first_difference(string1, string2))
+
+
+Assignment No. 5
+Aim: Write a program to demonstrate working of recursion
+
+Q. 1 Write Python program to print the factorial value of the given number.
+Python Code:
+def fact(n):
+ if n==0:
+ return 1
+ else:
+ return n*fact(n-1)
+n = int(input("Enter any number:"))
+print(fact(n))
+Q. 2 Write Python program to print the nth Fibonacci Number.
+Python Code:
+def fibonacci(n):
+ if n == 1 or n == 2:
+ return 1
+ else:
+ return fibonacci(n - 1) + fibonacci(n - 2)
+n = int(input("Enter n
+th position number: "))
+print(fibonacci(n))
+Q. 3 Write a Python program to get the sum of a non-negative integer using
+recursion technique.
+Python Code:
+def sumDigits(n):
+ if n == 0:
+ return 0
+ else:
+ return n % 10 + sumDigits(int(n / 10))
+n = int(input("Enter any number: "))
+print(sumDigits(n))
+Q.4 Write a Python program to calculate the sum of the positive integers of n + (n-2)
++ (n-4) ... (until n-x =< 0) using recursion.
+Python Code:
+def sum_series(n):
+ if n < 1:
+ return 0
+ else:
+ return n + sum_series(n - 2)
+n = int(input("Enter any number: "))
+print(sum_series(n))
+Q. 5 Write a Python program to calculate the value of 'a' to the power of 'b' using
+recursion.
+Python Code:
+def power(a, b):
+ if b == 0:
+ return 1
+ elif a == 0:
+ return 0
+ elif b == 1:
+ return a
+ else:
+ return a * power(a, b - 1)
+print(power(3, 4))
+
+
+Assignment No 6
+AIM: Write a program to perform different operations on list:
+i. Append
+ii. Extend
+iii. Insert
+iv. Remove
+v. Pop
+vi. Slice.
+
+Q. 1 Write a Python code to add an item at the end of the list.
+Python Code:
+currencies = ['Dollar', 'Euro', 'Pound']
+currencies.append('Yen')
+print(currencies)
+Q. 2 Write a Python code to extend the list with other list items.
+Python Code:
+numbers1 = [3, 4, 5]
+numbers2 = [10, 20]
+numbers2.extend(numbers1)
+print(f"numbers1 = {numbers1}")
+print(f"numbers2}")
+Q. 3 Write a Python code to inserts an element to the list at the specified index.
+Python Code:
+vowel = ['a', 'e', 'i', 'u']
+vowel.insert(3, 'o')
+print('List:', vowel)
+Q. 4 Write a Python code to remove the first matching element from the list.
+Python Code:
+prime_numbers = [2, 3, 5, 7, 9, 11]
+prime_numbers.remove(5)
+print('Updated List: ', prime_numbers)
+Q. 5 Write a Python code to removes the item at the specified index.
+Python Code:
+prime_numbers = [2, 3, 5, 7]
+removed_element = prime_numbers.pop(2)
+print('Removed Element:', removed_element)
+print('Updated List:', prime_numbers)
+Q. 6 Write a Python code to removes slices from a list.
+Python Code:
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+del my_list[2]
+print(my_list)
+del my_list[1:4]
+print(my_list)
+del my_list[:]
+print(my_list)
+
+
+Assignment No 7
+Aim: Write a program to perform different operations on set:
+i) Update
+ii) Remove the element
+iii) Clear
+iv) pop
+
+Operations on sets:
+i. Update:
+ Once a set is created, you cannot change its items, but you can add new
+items.
+ To add items from another set into the current set, use the update () method.
+Python Code:
+ thisset = {"apple", "banana", "cherry"}
+ tropical = {"pineapple", "mango", "papaya"}
+ thisset. update(tropical)
+ print(thisset)
+ii. Remove the element
+ To remove an item in a set, use the remove () method.
+Python Code:
+ thisset = {"apple", "banana", "cherry"}
+ thisset.remove("banana")
+ print(thisset)
+iii. Clear
+ The clear () method empties the set:
+Python Code:
+ thisset = {"apple", "banana", "cherry"}
+ thisset.clear()
+ print(thisset)
+iv. Pop
+ You can also use the pop () method to remove an item, but this method will
+remove a random item, so you cannot be sure what item that gets removed.
+ The return value of the pop () method is the removed item.
+e.g. Remove a random item by using the pop() method:
+Python Code:
+ thisset = {"apple", "banana", "cherry"}
+ x = thisset.pop()
+ print(x)
+ print(thisset)
+Source Code:
+ #update set
+ thisset = {"apple", "banana", "cherry"}
+ tropical = {"pineapple", "mango", "papaya"}
+ thisset. update(tropical)
+ print(thisset)
+#delete set
+ thisset = {"apple", "banana", "cherry"}
+ thisset.remove("banana")
+ print(thisset)
+ thisset = {"apple", "banana", "cherry"}
+ thisset.clear()
+ print(thisset)
+ thisset = {"apple", "banana", "cherry"}
+ x = thisset.pop()
+ print(x)
+ print(thisset)
+
+Assignment No 8
+Aim:Write a program to perform different operations on tuple:
+i. Accessing
+ii. Concatenation
+iii. Slicing
+iv. Deleting
+
+1. Accessing
+ Tuples are immutable, and usually, they contain a sequence of
+heterogeneous elements that are accessed via unpacking or indexing (or
+even by attribute in the case of named tuples)
+ In unpacking of tuple number of variables on the left-hand side should be
+equal to a number of values in given tuple a.
+Python Code:
+e.g. Accessing Tuple
+Tuple1 = tuple("Geeks")
+print("\nFirst element of Tuple: ")
+print(Tuple1[0])
+ Tuple1 = ("Geeks", "For", "Geeks")
+ a, b, c = Tuple1
+print("\nValues after unpacking: ")
+print(a)
+print(b)
+print(c)
+Concatenation of Tuples
+ Concatenation of tuple is the process of joining two or more Tuples.
+Concatenation is done by the use of ‘+’ operator.
+ Concatenation of tuples is done always from the end of the original tuple.
+Other arithmetic operations do not apply on Tuples.
+ Only the same datatypes can be combined with concatenation, an error
+arises if a list and a tuple are combined.
+Python Code:
+# Concatenation of tuples
+Tuple1 = (0, 1, 2, 3)
+Tuple2 = ('Geeks', 'For', 'Geeks')
+Tuple3 = Tuple1 + Tuple2
+# Printing first Tuple
+print("Tuple 1: ")
+print(Tuple1)
+# Printing Second Tuple
+print("\nTuple2: ")
+print(Tuple2)
+# Printing Final Tuple
+print("\nTuples after Concatenation: ")
+print(Tuple3)
+Slicing of Tuple
+ Slicing of a Tuple is done to fetch a specific range or slice of sub-elements
+from a Tuple.
+ Slicing can also be done to lists and arrays.
+ Indexing in a list results to fetching a single element whereas Slicing allows
+to fetch a set of elements.
+ Negative Increment values can also be used to reverse the sequence of
+Tuples.
+Python Code:
+# Slicing of a Tuple
+# with Numbers
+Tuple1 = tuple('GEEKSFORGEEKS')
+# Removing First element
+print("Removal of First Element: ")
+print(Tuple1[1:])
+# Reversing the Tuple
+print("\nTuple after sequence of Element is reversed: ")
+print(Tuple1[::-1])
+# Printing elements of a Range
+print("\nPrinting elements between Range 4-9: ")
+print(Tuple1[4:9])
+Deleting a Tuple
+ Tuples are immutable and hence they do not allow deletion of a part of it.
+The entire tuple gets deleted by the use of del() method.
+ Printing of Tuple after deletion results in an Error.
+Python Code:
+# Deleting a Tuple
+Tuple1 = (0, 1, 2, 3, 4)
+del Tuple1
+print(Tuple1)
+Source Code:
+T = ("apple", "banana", "cherry","mango","grape","orange")
+print("\n Created tuple is :",T)
+print("\n Second fruit is :",T[1])
+print("\n From 3-6 fruits are :",T[3:6])
+print("\n List of all items in Tuple :")
+for x in T:
+ print(x)
+if "apple" in T:
+ print("\n Yes, 'apple' is in the fruits tuple")
+print("\n Length of Tuple is :",len(T))
+
+
+Assignment No 8
+Aim: Write a program to demonstrate the working of dictionary
+
+Creating the dictionary
+Dictionaries are written with curly brackets, and have keys and values:
+Python Code:
+Thisdict= {
+ "brand": "Ford",
+ "model": "Mustang",
+ "year": 1964
+}
+print(thisdict)
+Accessing Items
+You can access the items of a dictionary by referring to its key name,
+inside square brackets: To get the value of ‘model’ key:
+Python Code:
+ thisdict= {
+ "brand": "Ford",
+ "model": "Mustang",
+ "year": 1964}
+x = thisdict["model"]
+Adding Items
+Adding an item to the dictionary is done by using a new index key and
+assigning a value to it:
+thisdict= {
+ "brand": "Ford",
+ "model": "Mustang",
+ "year": 1964
+}
+thisdict["color"]= "red"
+print(thisdict)
+Update Dictionary
+The update () method will update the dictionary with the items from a given
+argument. If the item does not exist, the item will be added.
+The argument must be a dictionary, or an iterable object with key:value
+pairs.
+Example Add a color item to the dictionary by using the update() method:
+thisdict= {
+ "brand": "Ford",
+ "model": "Mustang",
+ "year": 1964
+}
+thisdict.update({"color": "red"})
+Removing Items
+There are several methods to remove items from a dictionary: Example Get
+your own Python Server The pop () method removes the item with the
+specified key name:
+thisdict= {
+ "brand": "Ford",
+ "model": "Mustang",
+ "year": 1964
+}
+thisdict.pop("model")
+print(thisdict)
+Source Code:
+dict1 = {'StdNo':'532','StuName': 'Naveen', 'StuAge': 21,
+'StuCity': 'Hyderabad'}
+print("\n Dictionary is :",dict1)
+#Accessing specific values
+print("\n Student Name is :",dict1['StuName'])
+print("\n Student City is :",dict1['StuCity'])
+#Display all Keys
+print("\n All Keys in Dictionary ")
+for x in dict1:
+ print(x)
+#Display all values
+print("\n All Values in Dictionary ")
+for x in dict1:
+ print(dict1[x])
+#Adding items
+dict1["Phno"]=85457854
+#Updated dictoinary
+print("\n Uadated Dictionary is :",dict1)
+#Change values
+dict1["StuName"]="Madhu"
+#Updated dictoinary
+print("\n Uadated Dictionary is :",dict1)
+#Removing Items
+dict1.pop("StuAge");
+#Updated dictoinary
+print("\n Uadated Dictionary is :",dict1)
+#Length of Dictionary
+print("Length of Dictionary is :",len(dict1))
+#Copy a Dictionary
+dict2=dict1.copy()
+#New dictoinary
+print("\n New Dictionary is :",dict2)
+#empties the dictionary
+dict1.clear()
+print("\n Uadated Dictionary is :",dict1)
+
+
+Assignment No. 10
+Aim: Write a program demonstrates various operations on strings:
+I. Slicing
+II. Concatenating
+III. Finding the length of the string
+IV. Converting the string to uppercase and lowercase
+V. Replacing a substring with another substring
+VI. Splitting the string into a list of substrings
+
+
+Q. 1 Write a Python code to apply indexing on string.
+For example, The string "mystring" is indexed as given in the below figure.
+Python Code:
+mystring = "my world"
+mystring[0]
+Output : ‘m’
+mystring = "my world"
+mystring[-1]
+Output : ‘m’
+Q. 2 Write a Python code to apply Slicing on string.
+Python Code:
+mystring = "abcdefgh"
+mystring[2:]
+Output: 'cdefgh'
+mystring[:5]
+Output: 'abcde'
+mystring[3:6]
+Output: 'def'
+mystring[::]
+Output: 'abcdefgh'
+Q. 3 Write a Python code to Concatenating the string.
+Python Code:
+name = "sam"
+last_letters = name[1:]
+'p' + last_letters
+Output: 'pam'
+x = "Hello Wolrd"
+x = x + " It is a Beautiful Outside!"
+x
+Output: 'Hello World It is a Beautiful Outside!'
+Q. 4 Write a Python code to Find the length of the string.
+Python Code:
+len("hello")
+Output: 5
+len("I am")
+Output: 4
+Q. 5 Write a Python code to Converting the string to uppercase and lowercase.
+Python Code:
+x = 'Hello World'
+x.upper()
+Output: 'HELLO WORLD'
+x.lower()
+Output: 'hello world'
+Q. 6 Write a Python code to Replacing a substring with another substring.
+Python Code:
+string = "Hello World"
+new_string = string.replace("Hello","Happy")
+print(new_string)
+Output: Happy World
+Q. 7 Write a Python code to Splitting the string into a list of substrings
+Python Code:
+x.split()
+Output: ['Hello', 'World']
+x = 'Hi This is a string'
+x.split('i')
+Output: ['H', ' Th', 's ', 's a str', 'ng']
+
+
+Assignment No. 11
+Aim: Write a program to demonstrate different operations on file:
+i. Create
+ii. Open
+iii. Read
+iv. Write
+v. Update
+vi. Delete
+
+
